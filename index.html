@@ -749,15 +749,16 @@
             /* Estilo da bolinha */
             .nav-container::after,
             .comparison-section::after {
-                content: '→';
+               content: '➔';
                 position: absolute; /* Fica preso dentro do elemento pai */
                 
                 /* CORES E TAMANHO PEDIDOS */
                 background: #FFD700; /* Fundo Amarelo Ouro */
                 color: #FF0000;      /* Seta Vermelha */
-                width: 40px;         /* Maior */
-                height: 40px;        /* Maior */
+                width: 45px;         /* Maior */
+                height: 45px;        /* Maior */
                 font-size: 2rem;   /* Seta maior */
+                font-family: sans-serif; /* Garante que a seta fique igual em todo celular */
                 
                 /* Centralização e Borda */
                 border-radius: 50%;
@@ -765,6 +766,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                
+                /* Correção do Centro Visual */
+                line-height: 1;      /* Remove espaço extra acima/abaixo */
+                padding-bottom: 2px; /* Empurra levemente para o centro exato */
+                padding-left: 1px;   /* Ajuste fino horizontal */
                 
                 /* Sombra forte para destacar */
                 box-shadow: 0 3px 8px rgba(0,0,0,0.3);
@@ -5185,5 +5191,6 @@
     </script>
 </body>
 </html>
+
 
 
