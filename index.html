@@ -708,97 +708,101 @@
             position: relative;
         }
 
+       /* =========================================================
+           RESPONSIVIDADE FINAL (SETAS AMARELAS + CORREÇÃO ESOL)
+           ========================================================= */
+
+        /* Garante que os containers segurem a seta no lugar certo */
+        .comparison-section, .nav-container {
+            position: relative;
+        }
+
         /* CELULARES (Telas menores que 768px) */
         @media (max-width: 768px) {
             
             /* --- 1. AJUSTES GERAIS DE LAYOUT --- */
-            
             .main-content { padding: 1rem; }
             .header { padding: 1.5rem 1rem; }
             .header h1 { font-size: 1.6rem; }
             .product-header { grid-template-columns: 1fr; text-align: center; }
-            .product-badge h2 { font-size: 1.8rem; }
-
-            /* --- 2. FORÇAR EMPILHAMENTO (CORREÇÃO DO BUG ESOL XR) --- */
             
-            /* Força TODOS os grids (inclusive os com style inline) a ficarem em 1 coluna */
+            /* --- 2. CORREÇÃO DO LAYOUT QUEBRADO (ESOL XR E OUTROS) --- */
+            /* Força todos os grids a ficarem em 1 coluna (um embaixo do outro) */
             .cards-grid, 
             .sales-grid, 
             .overview-grid, 
             div[style*="grid-template-columns"] {
-                grid-template-columns: 1fr !important; /* O !important vence o estilo inline do HTML */
+                grid-template-columns: 1fr !important;
                 display: grid !important;
                 gap: 1.5rem !important;
+                width: 100% !important; /* Garante que ocupe a largura total */
             }
 
-            /* Ajuste específico para o texto dentro dos blocos coloridos */
-            div[style*="display: flex"] {
-                flex-direction: column !important; /* Empilha itens flexíveis */
-            }
-
-            /* --- 3. SETA VERMELHA ANIMADA (CONFIGURAÇÃO GERAL) --- */
+            /* --- 3. NOVA SETA (AMARELA E VERMELHA) --- */
             
-            /* Cria a animação da seta */
-            @keyframes slideRightRed {
-                0%, 100% { transform: translateY(-50%) translateX(0); opacity: 1; }
-                50% { transform: translateY(-50%) translateX(5px); opacity: 0.7; }
+            /* Animação para chamar atenção */
+            @keyframes pulseArrow {
+                0%, 100% { transform: translateY(-50%) translateX(0) scale(1); }
+                50% { transform: translateY(-50%) translateX(5px) scale(1.1); }
             }
 
-            /* Classe virtual para a seta */
+            /* Estilo da bolinha */
             .nav-container::after,
             .comparison-section::after {
                 content: '→';
-                position: absolute;
-                right: 5px;
-                background: #FF0000; /* VERMELHO PURO */
-                color: white;
-                width: 28px;
-                height: 28px;
+                position: absolute; /* Fica preso dentro do elemento pai */
+                
+                /* CORES E TAMANHO PEDIDOS */
+                background: #FFD700; /* Fundo Amarelo Ouro */
+                color: #FF0000;      /* Seta Vermelha */
+                width: 35px;         /* Maior */
+                height: 35px;        /* Maior */
+                font-size: 1.4rem;   /* Seta maior */
+                
+                /* Centralização e Borda */
                 border-radius: 50%;
+                border: 2px solid #fff; /* Borda branca para destacar do fundo */
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-weight: bold;
-                font-size: 1.1rem;
+                
+                /* Sombra forte para destacar */
+                box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+                
                 z-index: 1002;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-                pointer-events: none; /* Permite clicar através da seta */
-                animation: slideRightRed 1.5s ease-in-out infinite;
+                pointer-events: none; /* Deixa clicar no botão embaixo dela */
+                animation: pulseArrow 1.2s ease-in-out infinite;
             }
 
-            /* --- 4. POSICIONAMENTO DA SETA NO MENU --- */
+            /* --- 4. POSICIONAMENTO EXATO NO MENU --- */
+            /* Isso garante que a seta fique DENTRO da barra branca do menu */
+            .nav-container {
+                display: flex;
+                align-items: center;
+                overflow: hidden; /* Garante que nada vaze */
+            }
+            
             .nav-container::after {
+                right: 10px;
                 top: 50%; /* Centraliza na altura do menu */
-                position: fixed; /* Fixa na tela para acompanhar rolagem */
-                right: 10px;
-            }
-            
-            /* Ajuste da rolagem do menu */
-            .nav-tabs {
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-right: 40px; /* Espaço para a seta não tapar o último botão */
+                /* A transformação do translateY já está na animação keyframe */
             }
 
-            /* --- 5. POSICIONAMENTO DA SETA NAS TABELAS --- */
+            /* --- 5. POSICIONAMENTO NAS TABELAS --- */
             .comparison-section::after {
-                top: 40px; /* Posiciona logo abaixo do título da tabela */
-                right: 10px;
+                top: 30px; 
+                right: 5px;
             }
 
-            .comparison-section {
-                overflow-x: auto; /* Permite rolar a tabela */
-                padding-right: 20px;
+            /* Configuração da rolagem das abas e tabelas */
+            .nav-tabs, .comparison-section {
+                padding-right: 45px; /* Espaço para a seta não tampar o texto */
             }
             
-            /* Garante que a tabela force a rolagem se for larga */
             .comparison-table {
-                min-width: 600px; 
+                min-width: 600px;
             }
         }
-        
-
     </style>
 </head>
 <body>
