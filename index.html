@@ -728,6 +728,16 @@
         }
 
         /* CELULARES (Telas menores que 768px) */
+       /* =========================================================
+           RESPONSIVIDADE FINAL - SEM SETA NO TOPO
+           ========================================================= */
+
+        /* Container relativo apenas para tabelas segurarem a seta */
+        .comparison-section {
+            position: relative;
+        }
+
+        /* CELULARES (Telas menores que 768px) */
         @media (max-width: 768px) {
             
             /* --- 1. AJUSTES GERAIS DE LAYOUT --- */
@@ -736,14 +746,17 @@
             .header h1 { font-size: 1.6rem; }
             .product-header { grid-template-columns: 1fr; text-align: center; }
             
-            /* Ajuste da rolagem do menu (SEM SETA) */
+            /* Menu de Navegação - Sem Seta, Apenas Rolagem */
             .nav-container { display: block; }
             .nav-tabs {
                 justify-content: flex-start;
                 flex-wrap: nowrap;
                 overflow-x: auto;
                 padding-right: 1rem;
+                -webkit-overflow-scrolling: touch; /* Rolagem suave no iOS */
             }
+            /* Esconde barra de rolagem no Chrome/Safari */
+            .nav-tabs::-webkit-scrollbar { display: none; }
 
             /* --- 2. CORREÇÃO DO LAYOUT QUEBRADO (ESOL XR E OUTROS) --- */
             /* Força todos os grids a ficarem em 1 coluna (um embaixo do outro) */
@@ -762,7 +775,7 @@
                 flex-direction: column !important;
             }
 
-            /* --- 3. ANIMAÇÃO DA SETA --- */
+            /* --- 3. ANIMAÇÃO DA SETA (APENAS PARA TABELAS) --- */
             @keyframes pulseArrow {
                 0%, 100% { transform: translateY(-50%) translateX(0) scale(1); }
                 50% { transform: translateY(-50%) translateX(5px) scale(1.1); }
@@ -812,7 +825,6 @@
                 min-width: 600px;
             }
         }
-
             /* --- 4. POSICIONAMENTO EXATO NO MENU --- */
             /* Isso garante que a seta fique DENTRO da barra branca do menu */
             .nav-container {
@@ -5224,6 +5236,7 @@
     </script>
 </body>
 </html>
+
 
 
 
