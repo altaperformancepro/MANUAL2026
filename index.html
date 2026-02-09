@@ -718,6 +718,16 @@
         }
 
         /* CELULARES (Telas menores que 768px) */
+        /* =========================================================
+           RESPONSIVIDADE FINAL (SETA APENAS NO CORPO)
+           ========================================================= */
+
+        /* Garante que a tabela segure a seta no lugar certo */
+        .comparison-section {
+            position: relative;
+        }
+
+        /* CELULARES (Telas menores que 768px) */
         @media (max-width: 768px) {
             
             /* --- 1. AJUSTES GERAIS DE LAYOUT --- */
@@ -726,6 +736,15 @@
             .header h1 { font-size: 1.6rem; }
             .product-header { grid-template-columns: 1fr; text-align: center; }
             
+            /* Ajuste da rolagem do menu (SEM SETA) */
+            .nav-container { display: block; }
+            .nav-tabs {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-right: 1rem;
+            }
+
             /* --- 2. CORREÇÃO DO LAYOUT QUEBRADO (ESOL XR E OUTROS) --- */
             /* Força todos os grids a ficarem em 1 coluna (um embaixo do outro) */
             .cards-grid, 
@@ -735,50 +754,64 @@
                 grid-template-columns: 1fr !important;
                 display: grid !important;
                 gap: 1.5rem !important;
-                width: 100% !important; /* Garante que ocupe a largura total */
+                width: 100% !important;
+            }
+            
+            /* Ajuste para textos em blocos flexíveis ficarem empilhados */
+            div[style*="display: flex"] {
+                flex-direction: column !important;
             }
 
-            /* --- 3. NOVA SETA (AMARELA E VERMELHA) --- */
-            
-            /* Animação para chamar atenção */
+            /* --- 3. ANIMAÇÃO DA SETA --- */
             @keyframes pulseArrow {
                 0%, 100% { transform: translateY(-50%) translateX(0) scale(1); }
                 50% { transform: translateY(-50%) translateX(5px) scale(1.1); }
             }
 
-            /* Estilo da bolinha */
-            .nav-container::after,
+            /* --- 4. CONFIGURAÇÃO DA SETA (APENAS NAS TABELAS) --- */
             .comparison-section::after {
-               content: '➔';
-                position: absolute; /* Fica preso dentro do elemento pai */
+                content: '➔';        /* Seta grossa */
+                position: absolute;
                 
-                /* CORES E TAMANHO PEDIDOS */
-                background: #FFD700; /* Fundo Amarelo Ouro */
-                color: #FF0000;      /* Seta Vermelha */
-                width: 45px;         /* Maior */
-                height: 45px;        /* Maior */
-                font-size: 2rem;   /* Seta maior */
-                font-family: sans-serif; /* Garante que a seta fique igual em todo celular */
+                /* Visual (Amarelo e Vermelho) */
+                background: #FFD700; 
+                color: #FF0000;      
+                width: 45px;         
+                height: 45px;       
+                font-size: 1.8rem;   
+                font-family: sans-serif;
                 
-                /* Centralização e Borda */
+                /* Centralização */
                 border-radius: 50%;
-                border: 2px solid #fff; /* Borda branca para destacar do fundo */
+                border: 2px solid #fff; 
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                line-height: 1;      
+                padding-bottom: 2px; 
+                padding-left: 1px;   
                 
-                /* Correção do Centro Visual */
-                line-height: 1;      /* Remove espaço extra acima/abaixo */
-                padding-bottom: 2px; /* Empurra levemente para o centro exato */
-                padding-left: 1px;   /* Ajuste fino horizontal */
-                
-                /* Sombra forte para destacar */
+                /* Sombra e Animação */
                 box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-                
                 z-index: 1002;
-                pointer-events: none; /* Deixa clicar no botão embaixo dela */
+                pointer-events: none; 
                 animation: pulseArrow 1.2s ease-in-out infinite;
+
+                /* Posição na tabela */
+                top: 30px; 
+                right: 5px;
             }
+
+            /* Espaço extra na tabela para a seta não cobrir texto */
+            .comparison-section {
+                overflow-x: auto;
+                padding-right: 45px; 
+            }
+            
+            .comparison-table {
+                min-width: 600px;
+            }
+        }
 
             /* --- 4. POSICIONAMENTO EXATO NO MENU --- */
             /* Isso garante que a seta fique DENTRO da barra branca do menu */
@@ -5191,6 +5224,7 @@
     </script>
 </body>
 </html>
+
 
 
 
