@@ -969,6 +969,43 @@
     </style>
     <style media="screen">
       .pdf-cover-page { display: none !important; }
+    </style><style media="print">
+      @page { margin: 10mm 12mm 10mm 12mm; size: A4; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box !important; }
+      html, body { background: white !important; margin: 0 !important; padding: 0 !important; font-size: 11pt !important; line-height: 1.4 !important; width: 100% !important; overflow: visible !important; }
+      .nav-container, .header, .nav-tab, .back-btn, .nav-tabs, .tabs-container,
+      nav, .navigation, .menu, .sidebar, .top-bar, .toolbar, .tab-bar,
+      [class*="nav"], [class*="menu"], [class*="tab-container"] { display: none !important; }
+      .print-btn, [onclick*="print"], button[class*="print"], .btn-print,
+      a[href*="print"], [class*="imprimir"] { display: none !important; }
+      .product-panel { display: none !important; }
+      .product-panel.active { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+      h1, h2, h3, h4 { page-break-after: avoid !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+      p { margin: 2px 0 !important; orphans: 3; widows: 3; }
+      img { max-width: 100% !important; height: auto !important; page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card, .warning-box, .comparison-table, table, .product-section, section, .content-block { page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card { max-height: 95vh; overflow: visible !important; }
+      .comparison-table { font-size: 0.7rem !important; width: 100% !important; }
+      table { width: 100% !important; font-size: 0.75rem !important; border-collapse: collapse !important; }
+      table td, table th { padding: 3px 5px !important; }
+      .product-badge, .tag, .card-icon, .sales-card, .info-box, .warning-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .container, .wrapper, .content, main, .main-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
+      .grid, .card-grid, .cards-container { gap: 8px !important; }
+      .product-panel.active * { max-width: 100% !important; }
+      .pdf-cover-page {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        height: 100vh; width: 100%; page-break-after: always;
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 50%, #C44A1E 100%) !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+        color: white !important; text-align: center; box-sizing: border-box; padding: 60px 40px;
+      }
+      .pdf-cover-page img { max-width: 220px; margin-bottom: 50px; }
+      .pdf-cover-page h1 { font-size: 42px; font-weight: 800; color: white !important; margin: 0 0 16px 0; }
+      .pdf-cover-page p { font-size: 18px; color: rgba(255,255,255,0.85) !important; margin: 0; }
+      .pdf-cover-page .cover-line { width: 80px; height: 4px; background: rgba(255,255,255,0.5) !important; border-radius: 2px; margin: 30px 0; }
+    </style>
+    <style media="screen">
+      .pdf-cover-page { display: none !important; }
     </style></head>
 <body>
     <header class="header">
@@ -2212,7 +2249,7 @@
                         <span class="card-title">Dosagens</span></div><ul>
                         <li><strong>Anti-inflamatória:</strong> 20mg/gota/kg (inflamações)</li>
                         <li>Posologia: 1 gota/kg, de 6 a 8h</li>
-                        <li>Não ultrapassar 30 gotas a cada 6h</li>
+                        <li>Não ultrapassar 30 gotas a cada 6h</li><li style="color: rgb(108, 117, 125); border-bottom: 1px solid rgb(240, 240, 240);">Posologia máxima:&nbsp; 30 gotas&nbsp; &nbsp; &nbsp; &nbsp;(600mg)</li>
                     </ul>
                 </div>
 
@@ -2248,7 +2285,7 @@
             <div class="highlight-box">
                 <h4>📊 Posologia - A posologia anti-inflamatória difere da tradicional!</h4>
                 <p><strong>Febre e Dor:</strong> 5 a 10 mg/kg/dose a cada 6 ou 8 horas</p>
-                <p><strong>Anti-inflamatório:</strong> 20 mg/kg&nbsp;</p>
+                <p><strong>Anti-inflamatório:</strong>&nbsp;20 mg/kg com dose máxima de 600 mg (= 30 gotas Alivium GC)</p>
             </div>
 
             <div class="comparison-section">
@@ -2702,7 +2739,6 @@
                         <li><strong>Comprimidos:</strong> 20mg (caixa com 20 ou 30 comprimidos)</li>
                         <li><strong>Solução Oral (Ped):</strong> 2,5mg/mL</li>
                         <li><strong>Uso adulto:</strong> Acima de 12 anos</li>
-                        <li><strong>Uso pediátrico:</strong> A partir de 2 anos</li>
                     </ul>
                 </div>
 
@@ -2754,7 +2790,7 @@
 
             <div class="info-box">
                 <h4>💡 Não preciso calcular dose de Alektos Ped por peso/idade?</h4>
-                <p><strong>NÃO!</strong> Apenas 10mg ou 4mL por dia para crianças acima de 2 anos. Posologia simplificada!</p>
+                <p><strong>NÃO!</strong> Apenas 10mg ou 4mL por dia. Posologia simplificada!</p>
             </div>
 
             <div class="comparison-section">
@@ -3076,7 +3112,6 @@
                         <li><strong>Spray nasal aquoso:</strong> 50mcg/acionamento</li>
                         <li><strong>Apresentações:</strong> 60 e 120 atomizações</li>
                         <li><strong>Uso adulto e pediátrico:</strong> A partir de 2 anos</li>
-                        <li>Validade após aberto: 60 dias</li>
                     </ul>
                 </div>
 
@@ -3167,16 +3202,16 @@
                             <td>A partir de 7 horas</td>
                         </tr>
                         <tr>
-                            <td>Preço</td>
-                            <td class="product-col">$$</td>
-                            <td>$</td>
-                            <td>$</td>
+                            <td><span style="background-color: rgb(248, 249, 250);">Efeito Colateral</span></td>
+                            <td class="product-col"><strong>Baixo</strong></td>
+                            <td><span style="background-color: rgb(248, 249, 250);">Alto</span></td>
+                            <td><span style="background-color: rgb(248, 249, 250);">Alto</span></td>
                         </tr>
                         <tr>
-                            <td>Efeito Colateral</td>
-                            <td class="product-col"><strong>Baixo</strong></td>
-                            <td>Alto</td>
-                            <td>Alto</td>
+                            <td><hr></td>
+                            <td class="product-col"><hr></td>
+                            <td><hr></td>
+                            <td><hr></td>
                         </tr>
                     </tbody>
                 </table>
@@ -3323,7 +3358,7 @@
             </div>
 
             <div class="info-section" style="margin-top: 3rem; border-top: 4px solid var(--primary);">
-                <h3 style="background: #fff3e0; padding: 15px; border-radius: 8px; color: #e65100; margin-top: 1rem;">🅰️3️⃣ LISADOR TRIPLA (Tripla Associação)</h3>
+                <h3 style="background: #fff3e0; padding: 15px; border-radius: 8px; color: #e65100; margin-top: 1rem;">🅰️3️⃣ LISADOR&nbsp; (Tripla Associação)</h3>
                 <div class="cards-grid">
                     <div class="card">
                         <div class="card-header"><span class="card-title">Fórmula Potente</span></div>
@@ -7082,6 +7117,24 @@
         function printManual() {
             window.print();
         }
+    </script><script>
+      window.addEventListener("beforeprint", function() {
+        if (document.getElementById("pdf-cover")) return;
+        var activePanel = document.querySelector(".product-panel.active");
+        var title = activePanel ? (activePanel.querySelector(".product-header h2, h2, h1") || {}).textContent || "Manual" : "Manual";
+        var cover = document.createElement("div");
+        cover.id = "pdf-cover";
+        cover.className = "pdf-cover-page";
+        cover.innerHTML = '<div class="cover-line"></div>'
+          + "<h1>" + title + "</h1>"
+          + '<p>Manual do Produto</p>'
+          + '<div class="cover-line"></div>';
+        document.body.insertBefore(cover, document.body.firstChild);
+      });
+      window.addEventListener("afterprint", function() {
+        var cover = document.getElementById("pdf-cover");
+        if (cover) cover.remove();
+      });
     </script><script>
       window.addEventListener("beforeprint", function() {
         if (document.getElementById("pdf-cover")) return;
