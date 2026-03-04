@@ -895,6 +895,80 @@
     </style>
     <style media="screen">
       .pdf-cover-page { display: none !important; }
+    </style><style media="print">
+      @page { margin: 10mm 12mm 10mm 12mm; size: A4; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box !important; }
+      html, body { background: white !important; margin: 0 !important; padding: 0 !important; font-size: 11pt !important; line-height: 1.4 !important; width: 100% !important; overflow: visible !important; }
+      .nav-container, .header, .nav-tab, .back-btn, .nav-tabs, .tabs-container,
+      nav, .navigation, .menu, .sidebar, .top-bar, .toolbar, .tab-bar,
+      [class*="nav"], [class*="menu"], [class*="tab-container"] { display: none !important; }
+      .print-btn, [onclick*="print"], button[class*="print"], .btn-print,
+      a[href*="print"], [class*="imprimir"] { display: none !important; }
+      .product-panel { display: none !important; }
+      .product-panel.active { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+      h1, h2, h3, h4 { page-break-after: avoid !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+      p { margin: 2px 0 !important; orphans: 3; widows: 3; }
+      img { max-width: 100% !important; height: auto !important; page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card, .warning-box, .comparison-table, table, .product-section, section, .content-block { page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card { max-height: 95vh; overflow: visible !important; }
+      .comparison-table { font-size: 0.7rem !important; width: 100% !important; }
+      table { width: 100% !important; font-size: 0.75rem !important; border-collapse: collapse !important; }
+      table td, table th { padding: 3px 5px !important; }
+      .product-badge, .tag, .card-icon, .sales-card, .info-box, .warning-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .container, .wrapper, .content, main, .main-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
+      .grid, .card-grid, .cards-container { gap: 8px !important; }
+      .product-panel.active * { max-width: 100% !important; }
+      .pdf-cover-page {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        height: 100vh; width: 100%; page-break-after: always;
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 50%, #C44A1E 100%) !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+        color: white !important; text-align: center; box-sizing: border-box; padding: 60px 40px;
+      }
+      .pdf-cover-page img { max-width: 220px; margin-bottom: 50px; }
+      .pdf-cover-page h1 { font-size: 42px; font-weight: 800; color: white !important; margin: 0 0 16px 0; }
+      .pdf-cover-page p { font-size: 18px; color: rgba(255,255,255,0.85) !important; margin: 0; }
+      .pdf-cover-page .cover-line { width: 80px; height: 4px; background: rgba(255,255,255,0.5) !important; border-radius: 2px; margin: 30px 0; }
+    </style>
+    <style media="screen">
+      .pdf-cover-page { display: none !important; }
+    </style><style media="print">
+      @page { margin: 10mm 12mm 10mm 12mm; size: A4; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box !important; }
+      html, body { background: white !important; margin: 0 !important; padding: 0 !important; font-size: 11pt !important; line-height: 1.4 !important; width: 100% !important; overflow: visible !important; }
+      .nav-container, .header, .nav-tab, .back-btn, .nav-tabs, .tabs-container,
+      nav, .navigation, .menu, .sidebar, .top-bar, .toolbar, .tab-bar,
+      [class*="nav"], [class*="menu"], [class*="tab-container"] { display: none !important; }
+      .print-btn, [onclick*="print"], button[class*="print"], .btn-print,
+      a[href*="print"], [class*="imprimir"] { display: none !important; }
+      .product-panel { display: none !important; }
+      .product-panel.active { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+      h1, h2, h3, h4 { page-break-after: avoid !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+      p { margin: 2px 0 !important; orphans: 3; widows: 3; }
+      img { max-width: 100% !important; height: auto !important; page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card, .warning-box, .comparison-table, table, .product-section, section, .content-block { page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card { max-height: 95vh; overflow: visible !important; }
+      .comparison-table { font-size: 0.7rem !important; width: 100% !important; }
+      table { width: 100% !important; font-size: 0.75rem !important; border-collapse: collapse !important; }
+      table td, table th { padding: 3px 5px !important; }
+      .product-badge, .tag, .card-icon, .sales-card, .info-box, .warning-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .container, .wrapper, .content, main, .main-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
+      .grid, .card-grid, .cards-container { gap: 8px !important; }
+      .product-panel.active * { max-width: 100% !important; }
+      .pdf-cover-page {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        height: 100vh; width: 100%; page-break-after: always;
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 50%, #C44A1E 100%) !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+        color: white !important; text-align: center; box-sizing: border-box; padding: 60px 40px;
+      }
+      .pdf-cover-page img { max-width: 220px; margin-bottom: 50px; }
+      .pdf-cover-page h1 { font-size: 42px; font-weight: 800; color: white !important; margin: 0 0 16px 0; }
+      .pdf-cover-page p { font-size: 18px; color: rgba(255,255,255,0.85) !important; margin: 0; }
+      .pdf-cover-page .cover-line { width: 80px; height: 4px; background: rgba(255,255,255,0.5) !important; border-radius: 2px; margin: 30px 0; }
+    </style>
+    <style media="screen">
+      .pdf-cover-page { display: none !important; }
     </style></head>
 <body>
     <header class="header">
@@ -992,9 +1066,7 @@
             </div>
 
             <div class="comparison-section">
-                <h3>⚔️ Batalha das Cápsulas: Alivium vs Concorrentes</h3>
-                
-                            tecit<table class="comparison-table">
+                <h3>⚔️ Batalha das Cápsulas: Alivium vs Concorrentes</h3><br><table class="comparison-table">
                     <thead>
                         <tr>
                             <th>Característica</th>
@@ -1041,7 +1113,7 @@
                 <div class="sales-grid">
                     <div class="sales-card">
                         <h4>⚡ Velocidade</h4>
-                        <p>"Alivium Cápsula Líquida age em 10 minutos. Tylenol e Novalgina demoram até 30 minutos para começar a fazer efeito." , 509]</p>
+                        <p>"Alivium Cápsula Líquida age em 10 minutos. Tylenol e Novalgina demoram até 30 minutos para começar a fazer efeito."&nbsp;</p>
                     </div>
                     <div class="sales-card">
                         <h4>🏆 Exclusividade 600mg</h4>
@@ -1049,7 +1121,7 @@
                     </div>
                     <div class="sales-card">
                         <h4>🤢 Sem Sabor Amargo</h4>
-                        <p>"A cápsula blinda o sabor do medicamento. Diferente da Novalgina e Tylenol que deixam residual amargo na boca." , 509]</p>
+                        <p>"A cápsula blinda o sabor do medicamento. Diferente da Novalgina e Tylenol que deixam residual amargo na boca."&nbsp;</p>
                     </div>
                     <div class="sales-card">
                         <h4>💊 Tamanho Reduzido</h4>
@@ -1057,7 +1129,7 @@
                     </div>
                     <div class="sales-card">
                         <h4>👩‍⚕️ Indicação Buscofem?</h4>
-                        <p>"Buscofem se posiciona apenas para cólicas. Alivium 400mg atende cólicas E dores gerais (cabeça, costas, muscular)." ]</p>
+                        <p>"Buscofem se posiciona apenas para cólicas. Alivium 400mg atende cólicas E dores gerais (cabeça, costas, muscular)."&nbsp;</p>
                     </div>
                 </div>
             </div>
@@ -7010,6 +7082,42 @@
         function printManual() {
             window.print();
         }
+    </script><script>
+      window.addEventListener("beforeprint", function() {
+        if (document.getElementById("pdf-cover")) return;
+        var activePanel = document.querySelector(".product-panel.active");
+        var title = activePanel ? (activePanel.querySelector(".product-header h2, h2, h1") || {}).textContent || "Manual" : "Manual";
+        var cover = document.createElement("div");
+        cover.id = "pdf-cover";
+        cover.className = "pdf-cover-page";
+        cover.innerHTML = '<div class="cover-line"></div>'
+          + "<h1>" + title + "</h1>"
+          + '<p>Manual do Produto</p>'
+          + '<div class="cover-line"></div>';
+        document.body.insertBefore(cover, document.body.firstChild);
+      });
+      window.addEventListener("afterprint", function() {
+        var cover = document.getElementById("pdf-cover");
+        if (cover) cover.remove();
+      });
+    </script><script>
+      window.addEventListener("beforeprint", function() {
+        if (document.getElementById("pdf-cover")) return;
+        var activePanel = document.querySelector(".product-panel.active");
+        var title = activePanel ? (activePanel.querySelector(".product-header h2, h2, h1") || {}).textContent || "Manual" : "Manual";
+        var cover = document.createElement("div");
+        cover.id = "pdf-cover";
+        cover.className = "pdf-cover-page";
+        cover.innerHTML = '<div class="cover-line"></div>'
+          + "<h1>" + title + "</h1>"
+          + '<p>Manual do Produto</p>'
+          + '<div class="cover-line"></div>';
+        document.body.insertBefore(cover, document.body.firstChild);
+      });
+      window.addEventListener("afterprint", function() {
+        var cover = document.getElementById("pdf-cover");
+        if (cover) cover.remove();
+      });
     </script><script>
       window.addEventListener("beforeprint", function() {
         if (document.getElementById("pdf-cover")) return;
