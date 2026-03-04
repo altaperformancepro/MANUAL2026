@@ -2,7 +2,7 @@
 <html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Produtos - Mantecorp Farmasa | Linhas RESP + DOR + GASTRO + </title>
+    <title>Manual de Produtos - Mantecorp Farmasa | Linhas RESP + DOR + GASTRO + NUTRI</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <style>
         :root {
@@ -858,11 +858,48 @@
     </style>
     <style media="screen">
       .pdf-cover-page { display: none !important; }
+    </style><style media="print">
+      @page { margin: 10mm 12mm 10mm 12mm; size: A4; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box !important; }
+      html, body { background: white !important; margin: 0 !important; padding: 0 !important; font-size: 11pt !important; line-height: 1.4 !important; width: 100% !important; overflow: visible !important; }
+      .nav-container, .header, .nav-tab, .back-btn, .nav-tabs, .tabs-container,
+      nav, .navigation, .menu, .sidebar, .top-bar, .toolbar, .tab-bar,
+      [class*="nav"], [class*="menu"], [class*="tab-container"] { display: none !important; }
+      .print-btn, [onclick*="print"], button[class*="print"], .btn-print,
+      a[href*="print"], [class*="imprimir"] { display: none !important; }
+      .product-panel { display: none !important; }
+      .product-panel.active { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+      h1, h2, h3, h4 { page-break-after: avoid !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+      p { margin: 2px 0 !important; orphans: 3; widows: 3; }
+      img { max-width: 100% !important; height: auto !important; page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card, .warning-box, .comparison-table, table, .product-section, section, .content-block { page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card { max-height: 95vh; overflow: visible !important; }
+      .comparison-table { font-size: 0.7rem !important; width: 100% !important; }
+      table { width: 100% !important; font-size: 0.75rem !important; border-collapse: collapse !important; }
+      table td, table th { padding: 3px 5px !important; }
+      .product-badge, .tag, .card-icon, .sales-card, .info-box, .warning-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .container, .wrapper, .content, main, .main-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
+      .grid, .card-grid, .cards-container { gap: 8px !important; }
+      .product-panel.active * { max-width: 100% !important; }
+      .pdf-cover-page {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        height: 100vh; width: 100%; page-break-after: always;
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 50%, #C44A1E 100%) !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+        color: white !important; text-align: center; box-sizing: border-box; padding: 60px 40px;
+      }
+      .pdf-cover-page img { max-width: 220px; margin-bottom: 50px; }
+      .pdf-cover-page h1 { font-size: 42px; font-weight: 800; color: white !important; margin: 0 0 16px 0; }
+      .pdf-cover-page p { font-size: 18px; color: rgba(255,255,255,0.85) !important; margin: 0; }
+      .pdf-cover-page .cover-line { width: 80px; height: 4px; background: rgba(255,255,255,0.5) !important; border-radius: 2px; margin: 30px 0; }
+    </style>
+    <style media="screen">
+      .pdf-cover-page { display: none !important; }
     </style></head>
 <body>
     <header class="header">
         <h1>🏥 MANTECORP FARMASA...</h1>
-        <p>Manual Completo de Produtos - Linhas RESP | DOR | GASTRO | </p>
+        <p>Manual Completo de Produtos - Linhas RESP | DOR | GASTRO | NUTRI</p>
         <span class="subtitle">📋 Guia de Vendas e Informações Técnicas</span>
         <button style="margin-top: 1rem; padding: 0.7rem 2rem; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.5); font-family: Poppins, sans-serif; font-size: 0.95rem; border-radius: 50px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; transition: 0.3s; transform: translateY(-2px); box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 25px; font-weight: 700; color: white;" onmouseover="this.style.background='rgba(255,255,255,0.35)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 25px rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.2)';this.style.transform='none';this.style.boxShadow='none'" onclick="window.print()">🖨️ Imprimir PDF&nbsp;</button></header>
 
@@ -1791,7 +1828,7 @@
                         <tr>
                             <td>Possui Xilitol?</td>
                             <td class="product-col"><strong>✅ Sim (Linha XT)</strong></td>
-                            <td>❌ Não</td>
+                            <td><span style="background-color: rgb(248, 249, 250);">Sim</span></td>
                             <td>❌ Não</td>
                             <td>❌ Não</td>
                         </tr>
@@ -1812,7 +1849,7 @@
                         <tr>
                             <td>Versão Alto Volume</td>
                             <td class="product-col"><strong>✅ Sim (Squeeze)</strong><br>Baixa pressão</td>
-                            <td>❌ Não possui</td>
+                            <td>Sim</td>
                             <td>❌ Não possui</td>
                             <td>❌ Não possui</td>
                         </tr>
@@ -2103,7 +2140,6 @@
                         <span class="card-title">Dosagens</span></div><ul>
                         <li><strong>Anti-inflamatória:</strong> 20mg/gota/kg (inflamações)</li>
                         <li>Posologia: 1 gota/kg, de 6 a 8h</li>
-                        <li>Posologia máxima:&nbsp; 30 gotas&nbsp; &nbsp; &nbsp; &nbsp;(600mg)</li>
                         <li>Não ultrapassar 30 gotas a cada 6h</li>
                     </ul>
                 </div>
@@ -2140,7 +2176,7 @@
             <div class="highlight-box">
                 <h4>📊 Posologia - A posologia anti-inflamatória difere da tradicional!</h4>
                 <p><strong>Febre e Dor:</strong> 5 a 10 mg/kg/dose a cada 6 ou 8 horas</p>
-                <p><strong>Anti-inflamatório:</strong> 20 mg/kg com dose máxima de 600 mg (= 30 gotas Alivium GC)</p>
+                <p><strong>Anti-inflamatório:</strong> 20 mg/kg&nbsp;</p>
             </div>
 
             <div class="comparison-section">
@@ -6895,7 +6931,7 @@
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">↑</button>
 
     <footer class="footer">
-        <p>📋 Manual de Produtos Mantecorp Farmasa - Linhas RESP | DOR | GASTRO |</p>
+        <p>📋 Manual de Produtos Mantecorp Farmasa - Linhas RESP | DOR | GASTRO | NUTRI</p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem;">
             Material exclusivo para treinamento de equipe de vendas | Atualizado em 2026
         </p>
@@ -6992,5 +7028,22 @@
         var cover = document.getElementById("pdf-cover");
         if (cover) cover.remove();
       });
+    </script><script>
+      window.addEventListener("beforeprint", function() {
+        if (document.getElementById("pdf-cover")) return;
+        var activePanel = document.querySelector(".product-panel.active");
+        var title = activePanel ? (activePanel.querySelector(".product-header h2, h2, h1") || {}).textContent || "Manual" : "Manual";
+        var cover = document.createElement("div");
+        cover.id = "pdf-cover";
+        cover.className = "pdf-cover-page";
+        cover.innerHTML = '<div class="cover-line"></div>'
+          + "<h1>" + title + "</h1>"
+          + '<p>Manual do Produto</p>'
+          + '<div class="cover-line"></div>';
+        document.body.insertBefore(cover, document.body.firstChild);
+      });
+      window.addEventListener("afterprint", function() {
+        var cover = document.getElementById("pdf-cover");
+        if (cover) cover.remove();
+      });
     </script></body></html>
-
