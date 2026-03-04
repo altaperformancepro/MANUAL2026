@@ -1006,6 +1006,43 @@
     </style>
     <style media="screen">
       .pdf-cover-page { display: none !important; }
+    </style><style media="print">
+      @page { margin: 10mm 12mm 10mm 12mm; size: A4; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; box-sizing: border-box !important; }
+      html, body { background: white !important; margin: 0 !important; padding: 0 !important; font-size: 11pt !important; line-height: 1.4 !important; width: 100% !important; overflow: visible !important; }
+      .nav-container, .header, .nav-tab, .back-btn, .nav-tabs, .tabs-container,
+      nav, .navigation, .menu, .sidebar, .top-bar, .toolbar, .tab-bar,
+      [class*="nav"], [class*="menu"], [class*="tab-container"] { display: none !important; }
+      .print-btn, [onclick*="print"], button[class*="print"], .btn-print,
+      a[href*="print"], [class*="imprimir"] { display: none !important; }
+      .product-panel { display: none !important; }
+      .product-panel.active { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+      h1, h2, h3, h4 { page-break-after: avoid !important; margin-top: 8px !important; margin-bottom: 4px !important; }
+      p { margin: 2px 0 !important; orphans: 3; widows: 3; }
+      img { max-width: 100% !important; height: auto !important; page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card, .warning-box, .comparison-table, table, .product-section, section, .content-block { page-break-inside: avoid !important; }
+      .info-box, .card, .sales-card { max-height: 95vh; overflow: visible !important; }
+      .comparison-table { font-size: 0.7rem !important; width: 100% !important; }
+      table { width: 100% !important; font-size: 0.75rem !important; border-collapse: collapse !important; }
+      table td, table th { padding: 3px 5px !important; }
+      .product-badge, .tag, .card-icon, .sales-card, .info-box, .warning-box { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .container, .wrapper, .content, main, .main-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; width: 100% !important; }
+      .grid, .card-grid, .cards-container { gap: 8px !important; }
+      .product-panel.active * { max-width: 100% !important; }
+      .pdf-cover-page {
+        display: flex !important; flex-direction: column; align-items: center; justify-content: center;
+        height: 100vh; width: 100%; page-break-after: always;
+        background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 50%, #C44A1E 100%) !important;
+        -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+        color: white !important; text-align: center; box-sizing: border-box; padding: 60px 40px;
+      }
+      .pdf-cover-page img { max-width: 220px; margin-bottom: 50px; }
+      .pdf-cover-page h1 { font-size: 42px; font-weight: 800; color: white !important; margin: 0 0 16px 0; }
+      .pdf-cover-page p { font-size: 18px; color: rgba(255,255,255,0.85) !important; margin: 0; }
+      .pdf-cover-page .cover-line { width: 80px; height: 4px; background: rgba(255,255,255,0.5) !important; border-radius: 2px; margin: 30px 0; }
+    </style>
+    <style media="screen">
+      .pdf-cover-page { display: none !important; }
     </style></head>
 <body>
     <header class="header">
@@ -3447,7 +3484,7 @@
                     </div>
                     <div class="sales-card">
                         <h4>🎯 Mensagem 2</h4>
-                        <p><strong>Anti-inflamatório com potência analgésica e rápido início de ação (15 minutos)</strong></p>
+                        <p><b>Lisador Dip o mais forte analgésico não opioide.</b></p>
                     </div>
                     <div class="sales-card">
                         <h4>💊 Mensagem 3</h4>
@@ -3485,7 +3522,7 @@
                 
                 <div class="info-box">
                     <h4>🎯 Indicação</h4>
-                    <p>Maxsulid é indicado como <strong>anti-inflamatório, analgésico e antitérmico</strong>.</p>
+                    <p>Maxsulid é indicado como <strong>anti-inflamatório, analgésico.</strong></p>
                 </div>
 
                 <div class="info-box">
@@ -3611,7 +3648,7 @@
                 <div class="info-box">
                     <h4>📖 Descrição</h4>
                     <p>ECOXE (etoricoxibe) é um <strong>anti-inflamatório não-esteroide (AINE)</strong> administrado por via oral, conhecido como <strong>inibidor altamente seletivo da cicloxigenase 2 (COX-2)</strong>.</p>
-                    <p>Quando comparado aos AINEs não seletivos, ECOXE (etoricoxibe) diminui a dor, a inflamação e a febre, com <strong>reduzida toxicidade gastrintestinal</strong> e, ao contrário dos AINEs não seletivos tradicionais, <strong>não afeta a função plaquetária</strong>.</p>
+                    <p>Quando comparado aos AINEs não seletivos, ECOXE (etoricoxibe) diminui a dor, a inflamação e a febre, com <strong>reduzido efeito gastrintestinal</strong> e, ao contrário dos AINEs não seletivos tradicionais, <strong>não afeta a função plaquetária</strong>.</p>
                 </div>
 
                 <div class="info-box">
@@ -6825,7 +6862,7 @@
                 <div class="info-box">
                     <h4>📊 Resultados - Atributos de Concordância</h4>
                     <p style="margin-bottom: 1rem;"><strong>%TOP2BOX</strong> (Concordo Parcialmente + Concordo Totalmente)</p>
-                    <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem;">* Afirmações que não atingiram 70% de Concordância</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;"><span style="color: var(--gray);">* </span>Afirmações que não atingiram 70% de Concordância</p>
                     
                     <div class="comparison-section" style="margin-top: 1rem;">
                         <table class="comparison-table">
@@ -7117,6 +7154,24 @@
         function printManual() {
             window.print();
         }
+    </script><script>
+      window.addEventListener("beforeprint", function() {
+        if (document.getElementById("pdf-cover")) return;
+        var activePanel = document.querySelector(".product-panel.active");
+        var title = activePanel ? (activePanel.querySelector(".product-header h2, h2, h1") || {}).textContent || "Manual" : "Manual";
+        var cover = document.createElement("div");
+        cover.id = "pdf-cover";
+        cover.className = "pdf-cover-page";
+        cover.innerHTML = '<div class="cover-line"></div>'
+          + "<h1>" + title + "</h1>"
+          + '<p>Manual do Produto</p>'
+          + '<div class="cover-line"></div>';
+        document.body.insertBefore(cover, document.body.firstChild);
+      });
+      window.addEventListener("afterprint", function() {
+        var cover = document.getElementById("pdf-cover");
+        if (cover) cover.remove();
+      });
     </script><script>
       window.addEventListener("beforeprint", function() {
         if (document.getElementById("pdf-cover")) return;
